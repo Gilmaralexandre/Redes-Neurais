@@ -1,16 +1,4 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-# Esse script serve para testar a generalização da rede neural treinada no
-# script Multicamadas.py
-#
-# OBS: É necessário executar o Multicamadas.py ANTES de executar esse aqui!
-#
-# Author: João Marcos Meirelles da Silva
-# creation date	: jan, 23th, 2019
-# updated	: aug, 28th, 2019
-
-#import numpy as np
+import numpy as np
 
 # Carrega os dados de treinamento
 from matplotlib import colors

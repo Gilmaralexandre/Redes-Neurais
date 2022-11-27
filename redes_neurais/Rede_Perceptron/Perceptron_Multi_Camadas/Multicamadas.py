@@ -1,20 +1,11 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-# Esse script corresponde à aula prática #02 do curso de Introdução às Redes
-# Neurais do canal Inteligência Artificial na Prática.
-#
-# Author: João Marcos Meirelles da Silva
-# creation date	: jan, 23th, 2019
-# updated	: aug, 28th, 2019
 import numpy as np
 import matplotlib.pyplot as plt
    
 # Variar numEpocas entre 20, 200, 1.300 e 2.000 (eta = 0.01  e N = 6)
-numEpocas = 1300      # Número de épocas.
+numEpocas = 20        # Número de épocas.
 q = 13                # Número de padrões.
 
-eta = 0.01            # Taxa de aprendizado.
+eta = 0.01             # Taxa de aprendizado.
 m = 2                 # Número de neurônios na camada de entrada.
 N = 1                 # Número de neurônios na camada escondida.
 L = 1                 # Número de neurônios na camada de saída.
@@ -35,7 +26,7 @@ pesoN = pesoN - pesoN.mean()
 pHN   = pHN - pHN.mean()
 
 # Plotando os dados
-plt.scatter(peso, pH, c=d, cmap=colors.ListedColormap(['red', 'orange']))
+plt.scatter(peso, pH, c=d)
 plt.xlabel('peso normalizado')
 plt.ylabel('pH normalizado')
 plt.show()
@@ -120,6 +111,7 @@ for i in range(q):
     Y = np.tanh(W2.dot(O1b))            # Equações (3) e (4) juntas.
     print(Y)
     
-    Error_Test[i] = d[i] - np.round(Y)
+    Error_Test[i] = d[i] - Y
     
 print(Error_Test)
+print(np.round(Error_Test) - d)
